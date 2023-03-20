@@ -7,7 +7,7 @@ namespace Day4_Task2.Prints
     {
         public void ToString(List<Weather> weather)
         {
-            Console.WriteLine("Weather sorted by Ci Names (alphabetically):\n");
+            Console.WriteLine("\nWeather sorted by City Names (alphabetically):\n");
 
             foreach (var item in weather)
             {

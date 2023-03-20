@@ -22,8 +22,12 @@ class Program
 
         Sort sortByTemp = new SortByTemperature();
         Sort sortByCity = new SortByCityName();
+        Sort sortByCountry = new SortByCountry();
+        Sort sortByWindSpeed = new SortByWindSpeed();
         PrintWeatherByTemperature printWeatherByTemp = new PrintWeatherByTemperature();
         PrintWeatherByCities printWeatherByCity = new PrintWeatherByCities();
+        PrintWeatherByCountries printWeatherByCountry = new PrintWeatherByCountries();
+        PrintWeatherByWindSpeed printWeatherByWindSpeed = new PrintWeatherByWindSpeed();
 
         List<Weather> sortedbyTemp = sortByTemp.Sorting(weather);
 
@@ -35,7 +39,13 @@ class Program
 
         printWeatherByCity.ToString(sortedByCity);
 
+        List<Weather> sortedByCountry = sortByCountry.Sorting(weather);
 
+        printWeatherByCountry.ToString(sortedByCountry);
+
+        List<Weather> sortedByWindSpeed = sortByWindSpeed.Sorting(weather);
+
+        printWeatherByWindSpeed.ToString(sortedByWindSpeed);
     }
         
 }
