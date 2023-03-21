@@ -1,4 +1,6 @@
-﻿namespace Day4_Task2.Classes
+﻿using Day4_Task2.Classes;
+
+namespace Day4_Task2.Sorting
 {
     public abstract class Sort
     {

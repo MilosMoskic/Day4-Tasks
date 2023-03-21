@@ -1,4 +1,5 @@
 ﻿using Day4_Task2.Classes;
+using Day4_Task2.Filters;
 using Day4_Task2.Prints;
 using Day4_Task2.Searching;
 using Day4_Task2.Sorting;
@@ -33,7 +34,9 @@ class Program
         //PrintWeatherByCountries printWeatherByCountry = new PrintWeatherByCountries();
         //PrintWeatherByWindSpeed printWeatherByWindSpeed = new PrintWeatherByWindSpeed();
         PrintWeatherByZipCode printweatherByZipCode = new PrintWeatherByZipCode();
+        PrintTemperatures printTemperatures = new PrintTemperatures();
 
+        Filters filterByTemperature = new FilterByTemperature();
 
         //List<Weather> sortedbyTemp = sortByTemp.Sorting(weather);
 
@@ -55,6 +58,8 @@ class Program
 
         List<Weather> sortedByZipCode = sortByZipCode.Sorting(weather);
 
+        List<Weather> filteredByTemperature = new List<Weather>();
+
         printweatherByZipCode.ToString(sortedByZipCode);
 
         Console.WriteLine("\nEnter Zip Code: ");
@@ -68,6 +73,50 @@ class Program
             Weather resultWeather = weather[index];
             Console.WriteLine($"{resultWeather.Country}, {resultWeather.ZipCode}," +
                 $" {resultWeather.City}, {resultWeather.Temperature}, {resultWeather.WindSpeed}");
+        }
+
+        bool terminate = true;
+
+
+
+
+
+        while (terminate)
+        {
+
+            Console.WriteLine("\nInsert 1 if you want to filter temperature by exact temperature.\n" +
+                              "Insert 2 if you want to filter temperature by greater than inserted temperature.\n" +
+                              "Insert 3 if you want to filter temperature by less than inserted temperature.\n");
+
+            string key = Console.ReadLine();
+
+            switch (key)
+            {
+                case "1":
+                    Console.WriteLine("\nInsert temperature: ");
+                    int input = Convert.ToInt32(Console.ReadLine());
+                    filteredByTemperature = filterByTemperature.Filtering(weather, input, "1");
+                    printTemperatures.ToString(filteredByTemperature);
+                    terminate = false;
+                    break;
+                case "2":
+                    Console.WriteLine("\nInsert temperature: ");
+                    int input1 = Convert.ToInt32(Console.ReadLine());
+                    filteredByTemperature = filterByTemperature.Filtering(weather, input1, "2");
+                    printTemperatures.ToString(filteredByTemperature);
+                    terminate = false;
+                    break;
+                case "3":
+                    Console.WriteLine("\nInsert temperature: ");
+                    int input2 = Convert.ToInt32(Console.ReadLine());
+                    filteredByTemperature = filterByTemperature.Filtering(weather, input2, "3");
+                    printTemperatures.ToString(filteredByTemperature);
+                    terminate = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid Key.");
+                    break;
+            }
         }
     }
         
