@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Day4_Task2.Classes;
 
-namespace Day4_Task2.Classes
+namespace Day4_Task2.Sorting
 {
-    public class SortByWindSpeed : Sort
+    public class SortByZipCode : Sort
     {
         public override List<Weather> Sorting(List<Weather> weather)
         {
@@ -26,17 +22,17 @@ namespace Day4_Task2.Classes
 
         public int Partition(List<Weather> weather, int left, int right)
         {
-            decimal pivot = weather[right].WindSpeed;
+            decimal pivot = weather[right].ZipCode;
             int i = left - 1;
             for (int j = left; j < right; j++)
             {
-                if (weather[j].WindSpeed <= pivot)
+                if (weather[j].ZipCode <= pivot)
                 {
                     i++;
                     Swap(weather, i, j);
                 }
             }
-            Swap(weather, i + 1, right); 
+            Swap(weather, i + 1, right);
             return i + 1;
         }
 

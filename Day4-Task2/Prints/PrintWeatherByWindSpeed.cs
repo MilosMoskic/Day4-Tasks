@@ -16,7 +16,7 @@ namespace Day4_Task2.Prints
 
             foreach (var item in weather)
             {
-                Console.WriteLine($"{item.Country}, {item.City}, {item.Temperature}, {item.WindSpeed}");
+                Console.WriteLine($"{item.Country}, {item.ZipCode}, {item.City}, {item.Temperature}, {item.WindSpeed}");
             }
         }
     }

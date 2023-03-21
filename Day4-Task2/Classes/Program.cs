@@ -1,5 +1,7 @@
 ﻿using Day4_Task2.Classes;
 using Day4_Task2.Prints;
+using Day4_Task2.Searching;
+using Day4_Task2.Sorting;
 
 class Program
 {
@@ -8,44 +10,65 @@ class Program
 
         List<Weather> weather = new List<Weather>
         {
-            new Weather("Serbia", "Novi Sad", 8, 2.68M),
-            new Weather("Serbia", "Belgrade", 17, 3.13M),
-            new Weather("Germany", "Munich", 24, 3.6M),
-            new Weather("Sweden", "Stockholm", 4, 5.81M),
-            new Weather("UK", "London", 2, 1.54M),
-            new Weather("France", "Paris", 27, 2.68M),
-            new Weather("Italy", "Venice", 17, 2.24M),
-            new Weather("Italy", "Milano", 19, 0.89M),
-            new Weather("Serbia", "Zrenjanin", 9, 0.51M),
-            new Weather("Netherland", "Amsterdam", 9, 4.12M)
+             new Weather("Serbia", 21000, "Novi Sad", 8, 2.68M),
+             new Weather("Serbia", 11000, "Belgrade", 17, 3.13M),
+             new Weather("Germany", 80335, "Munich", 24, 3.6M),
+             new Weather("Sweden", 10316, "Stockholm", 4, 5.81M),
+             new Weather("UK", 56273, "London", 2, 1.54M),
+             new Weather("France", 70213, "Paris", 27, 2.68M),
+             new Weather("Italy", 30100, "Venice", 17, 2.24M),
+             new Weather("Italy", 20019, "Milano", 19, 0.89M),
+             new Weather("Serbia", 23000, "Zrenjanin", 9, 0.51M),
+             new Weather("Netherland", 10110, "Amsterdam", 9, 4.12M)
         };
 
-        Sort sortByTemp = new SortByTemperature();
-        Sort sortByCity = new SortByCityName();
-        Sort sortByCountry = new SortByCountry();
-        Sort sortByWindSpeed = new SortByWindSpeed();
-        PrintWeatherByTemperature printWeatherByTemp = new PrintWeatherByTemperature();
-        PrintWeatherByCities printWeatherByCity = new PrintWeatherByCities();
-        PrintWeatherByCountries printWeatherByCountry = new PrintWeatherByCountries();
-        PrintWeatherByWindSpeed printWeatherByWindSpeed = new PrintWeatherByWindSpeed();
+        //Sort sortByTemp = new SortByTemperature();
+        //Sort sortByCity = new SortByCityName();
+        //Sort sortByCountry = new SortByCountry();
+        //Sort sortByWindSpeed = new SortByWindSpeed();
+        Sort sortByZipCode = new SortByZipCode();
+        ZipCodeSearch zipCodeSearch = new ZipCodeSearch();
+        //PrintWeatherByTemperature printWeatherByTemp = new PrintWeatherByTemperature();
+        //PrintWeatherByCities printWeatherByCity = new PrintWeatherByCities();
+        //PrintWeatherByCountries printWeatherByCountry = new PrintWeatherByCountries();
+        //PrintWeatherByWindSpeed printWeatherByWindSpeed = new PrintWeatherByWindSpeed();
+        PrintWeatherByZipCode printweatherByZipCode = new PrintWeatherByZipCode();
 
-        List<Weather> sortedbyTemp = sortByTemp.Sorting(weather);
 
-        printWeatherByTemp.ToString(sortedbyTemp);
+        //List<Weather> sortedbyTemp = sortByTemp.Sorting(weather);
 
-        Console.WriteLine();
+        //printWeatherByTemp.ToString(sortedbyTemp);
 
-        List<Weather> sortedByCity = sortByCity.Sorting(weather);
+        //Console.WriteLine();
 
-        printWeatherByCity.ToString(sortedByCity);
+        //List<Weather> sortedByCity = sortByCity.Sorting(weather);
 
-        List<Weather> sortedByCountry = sortByCountry.Sorting(weather);
+        //printWeatherByCity.ToString(sortedByCity);
 
-        printWeatherByCountry.ToString(sortedByCountry);
+        //List<Weather> sortedByCountry = sortByCountry.Sorting(weather);
 
-        List<Weather> sortedByWindSpeed = sortByWindSpeed.Sorting(weather);
+        //printWeatherByCountry.ToString(sortedByCountry);
 
-        printWeatherByWindSpeed.ToString(sortedByWindSpeed);
+        //List<Weather> sortedByWindSpeed = sortByWindSpeed.Sorting(weather);
+
+        //printWeatherByWindSpeed.ToString(sortedByWindSpeed);
+
+        List<Weather> sortedByZipCode = sortByZipCode.Sorting(weather);
+
+        printweatherByZipCode.ToString(sortedByZipCode);
+
+        Console.WriteLine("\nEnter Zip Code: ");
+
+        int zipcode = Convert.ToInt32(Console.ReadLine());
+
+        int result = zipCodeSearch.ZipCodeSearching(sortedByZipCode, zipcode);
+        if(result == 1)
+        {
+            int index = weather.FindIndex(a => a.ZipCode == zipcode);
+            Weather resultWeather = weather[index];
+            Console.WriteLine($"{resultWeather.Country}, {resultWeather.ZipCode}," +
+                $" {resultWeather.City}, {resultWeather.Temperature}, {resultWeather.WindSpeed}");
+        }
     }
         
 }

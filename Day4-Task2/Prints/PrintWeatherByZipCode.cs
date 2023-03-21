@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Day4_Task2.Prints
 {
-    public class PrintWeatherByCountries : IPrintable
+    public class PrintWeatherByZipCode : IPrintable
     {
         public void ToString(List<Weather> weather)
         {
-            Console.WriteLine("\nWeather sorted by Countries (alphabetically):\n");
+            Console.WriteLine("\nWeather sorted by ZipCodes:\n");
 
             foreach (var item in weather)
             {

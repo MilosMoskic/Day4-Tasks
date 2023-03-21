@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Day4_Task2.Classes;
 
-namespace Day4_Task2.Classes
+namespace Day4_Task2.Sorting
 {
     public class SortByCityName : Sort
     {

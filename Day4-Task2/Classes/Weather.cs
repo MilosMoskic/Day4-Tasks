@@ -9,13 +9,15 @@ namespace Day4_Task2.Classes
     public class Weather
     {
         public string Country { get; set; }
+        public int ZipCode { get; set; }
         public string City { get; set; }
         public decimal Temperature { get; set; }
         public decimal WindSpeed { get; set; }
 
-        public Weather(string country, string city, decimal temperature, decimal windspeed)
+        public Weather(string country,int zipcode, string city, decimal temperature, decimal windspeed)
         {
             Country = country;
+            ZipCode = zipcode;
             City = city;
             Temperature = temperature;
             WindSpeed = windspeed;

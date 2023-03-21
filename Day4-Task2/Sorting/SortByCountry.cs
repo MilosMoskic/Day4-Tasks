@@ -4,8 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Day4_Task2.Classes;
 
-namespace Day4_Task2.Classes
+namespace Day4_Task2.Sorting
 {
     public class SortByCountry : Sort
     {
@@ -17,15 +18,14 @@ namespace Day4_Task2.Classes
                 var smallestVal = i;
                 for (int j = i + 1; j < size; j++)
                 {
-                    
-                    if (String.Compare(weather[j].Country, weather[smallestVal].Country) < 0)
+                    if (string.Compare(weather[j].Country, weather[smallestVal].Country) < 0)
                     {
                         smallestVal = j;
                     }
                 }
-                var tempVar = weather[smallestVal];
+                var temp = weather[smallestVal];
                 weather[smallestVal] = weather[i];
-                weather[i] = tempVar;
+                weather[i] = temp;
             }
             return weather;
         }

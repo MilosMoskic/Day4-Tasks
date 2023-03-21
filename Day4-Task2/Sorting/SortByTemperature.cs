@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Day4_Task2.Classes;
 
-namespace Day4_Task2.Classes
+namespace Day4_Task2.Sorting
 {
     public class SortByTemperature : Sort
     {
@@ -13,7 +14,7 @@ namespace Day4_Task2.Classes
             int size = weather.Count();
             for (int i = 1; i < size; i++)
             {
-                for (int j = 0; j < (size - i); j++)
+                for (int j = 0; j < size - i; j++)
                 {
                     if (weather[j].Temperature > weather[j + 1].Temperature)
                     {
