@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Day4_Task2.Prints
 {
-    public class PrintTemperatures : IPrintable
+    public class PrintFilter : IPrintable
     {
         public void ToString(List<Weather> weather)
         {
