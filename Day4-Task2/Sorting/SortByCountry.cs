@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Day4_Task2.Model;
+﻿using Day4_Task2.Model;
 
 namespace Day4_Task2.Sorting
 {

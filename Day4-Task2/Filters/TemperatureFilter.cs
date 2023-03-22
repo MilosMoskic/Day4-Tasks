@@ -1,12 +1,6 @@
 ﻿using Day4_Task2.Interfaces;
 using Day4_Task2.Model;
-using Day4_Task2.Prints;
 using Day4_Task2.Sorting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Day4_Task2.Filters
 {
