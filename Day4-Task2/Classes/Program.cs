@@ -48,6 +48,7 @@ class Program
         bool terminate = true;
         #endregion
 
+        #region Program
         Console.WriteLine("\nInsert T if you want to filter weather by Temperature.\n" +
                           "Insert C if you want to filter weather by Countries..\n" +
                           "Insert E if you want to exit program.\n");
@@ -77,6 +78,8 @@ class Program
                     break;
             }
         }
+
+        #endregion
 
     }
 }
