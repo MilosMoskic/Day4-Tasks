@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Day4_Task2.Interfaces
 {
-    public interface IBinarySearch
+    public interface IPagination
     {
-        public int BinarySearch(List<Weather> weather, int left, int right, int item_to_find);
+        public void Paging(List<Weather> weather, int NumOfRecordsPerPage);
     }
 }

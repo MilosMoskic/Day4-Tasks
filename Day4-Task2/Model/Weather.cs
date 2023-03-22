@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day4_Task2.Classes
+namespace Day4_Task2.Model
 {
     public class Weather
     {
@@ -14,7 +14,7 @@ namespace Day4_Task2.Classes
         public int Temperature { get; set; }
         public decimal WindSpeed { get; set; }
 
-        public Weather(string country,int zipcode, string city, int temperature, decimal windspeed)
+        public Weather(string country, int zipcode, string city, int temperature, decimal windspeed)
         {
             Country = country;
             ZipCode = zipcode;

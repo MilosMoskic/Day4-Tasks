@@ -1,4 +1,4 @@
-﻿using Day4_Task2.Classes;
+﻿using Day4_Task2.Model;
 
 namespace Day4_Task2.Sorting
 {

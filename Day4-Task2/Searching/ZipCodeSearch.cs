@@ -1,12 +1,11 @@
-﻿using Day4_Task2.Classes;
-using Day4_Task2.Interfaces;
+﻿using Day4_Task2.Interfaces;
+using Day4_Task2.Model;
 using System.Reflection;
 
 namespace Day4_Task2.Searching
 {
     public class ZipCodeSearch : IBinarySearch
-    { 
-
+    {
         public int ZipCodeSearching(List<Weather> weather, int itemname)
         {
             if(BinarySearch(weather, 0, weather.Count, itemname) != -1)
@@ -16,7 +15,7 @@ namespace Day4_Task2.Searching
             else
             {
                 return -1;
-            }
+            }   
 
         }
         public int BinarySearch(List<Weather> weather, int left, int right, int item_to_find)

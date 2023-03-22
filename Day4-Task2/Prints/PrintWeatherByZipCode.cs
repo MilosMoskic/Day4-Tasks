@@ -1,5 +1,5 @@
-﻿using Day4_Task2.Classes;
-using Day4_Task2.Interfaces;
+﻿using Day4_Task2.Interfaces;
+using Day4_Task2.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
